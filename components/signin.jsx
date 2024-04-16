@@ -11,7 +11,7 @@ function SignIn() {
 
             <div className="flex flex-col overflow-hidden shadow-md shadow-slate-600 bg-slate-500 rounded-2xl">
                     <div className="h-52">
-                        <img className="object-cover w-full h-full" src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" srcset="" />
+                        <img className="object-cover w-full h-full" src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=600" alt="image"  />
                     </div>
             
 
