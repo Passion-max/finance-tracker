@@ -17,8 +17,8 @@ function SignIn() {
             <h1 className="mb-6 text-4xl font-bold text-center">Welcome 👋</h1>
 
             <div className="flex flex-col overflow-hidden shadow-md shadow-slate-600 bg-slate-500 rounded-2xl">
-                <div className="h-52">
-                    <img className="object-cover w-full h-full" src="/hero-image.jpg" alt="image" />
+                <div className="h-60">
+                    <img className="object-cover w-full h-full" src="/hero-image2.jpg" alt="image" />
                 </div>
 
 
@@ -30,7 +30,7 @@ function SignIn() {
 
             </div>
 
-            <div className="mt-6 bg-slate-700 rounded-2xl px-4 py-4 ">
+            <div className="my-6  bg-slate-700 rounded-2xl px-4 py-4 ">
                 <p> <span className="font-bold">Welcome to Beginner Budget Buddy :</span> Your Personal Finance Companion! Take control of your finances effortlessly with our intuitive app designed for beginners. Track expenses, set budgets, and achieve financial goals with ease. Start your journey to financial empowerment today!"</p>
             </div>
         </main>
