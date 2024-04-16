@@ -4,6 +4,9 @@ import { IoIosStats } from "react-icons/io";
 
 import { authContext } from "@/lib/store/auth-context";
 
+import { ImStatsBars } from "react-icons/im";
+
+
 function Nav() {
 
   const { user, loading, logout } = useContext(authContext)
@@ -22,7 +25,9 @@ function Nav() {
         {user && !loading && (
           <nav className="flex items-center gap-4">
             <div>
-              <IoIosStats className="text-2xl" />
+              <a href="#stats" >
+              <ImStatsBars className="text-2xl" />
+              </a>
             </div>
             <div>
               <button onClick={logout} className="btn btn-danger">Sign Out</button>

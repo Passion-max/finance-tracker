@@ -7,6 +7,7 @@ import { authContext } from "@/lib/store/auth-context";
 
 
 import { FaTrashAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function AddIncomeModal({ show, onClose }) {
 
@@ -31,8 +32,10 @@ function AddIncomeModal({ show, onClose }) {
             await addIncomeItem(newIncome);
             descriptionRef.current.value = "";
             amountRef.current.value = "";
+            toast.success("Income added successfully!")
         } catch (error) {
             console.log(error.message)
+            toast.error(error.message)
         }
 
         
@@ -41,8 +44,10 @@ function AddIncomeModal({ show, onClose }) {
     const deleteIncomeEntryHandler = async (incomeId) => {
         try {
             await removeIncomeItem(incomeId)
+            toast.success("Income deleted successfully!")
         } catch (error) {
             console.log(error.message)
+            toast.error(error.message)
         }
     }
 

@@ -1,10 +1,15 @@
 "use client"
 
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["100", "300", "500", "700", "900"] });
 import Nav from "@/components/Navigation"
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+
+import Head from "@/app/head"
 
 import FinanceContextProvider from "@/lib/store/finance-context";
 import AuthContextProvider from "@/lib/store/auth-context";
@@ -17,12 +22,14 @@ import AuthContextProvider from "@/lib/store/auth-context";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <Head />
+      <body className={poppins.className}>
       <AuthContextProvider>
       <FinanceContextProvider>
+        <ToastContainer />
         <Nav/>
         {children}
-        </FinanceContextProvider>
+       </FinanceContextProvider>
         </AuthContextProvider>
         </body>
     </html>

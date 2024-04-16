@@ -4,11 +4,12 @@ import Model from "@/components/Model";
 import { currencyFormatter } from "@/lib/utils"
 
 import { FaTrashAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function ViewExpenseModal({ show, onClose, expense }) {
   const { deleteExpenseItem, deleteExpenseCategory} = useContext(financeContext)
 
-  const deleteExpenesHandler = (item) => {
+  const deleteExpenesItemHandler = async (item) => {
     try {
       const updatedItems = expense.items.filter((i) => i.id !== item.id);
 
@@ -17,17 +18,22 @@ function ViewExpenseModal({ show, onClose, expense }) {
         total: expense.total - item.amount
       }
 
-      deleteExpenseItem( updatedExpense, expense.id)
+      await deleteExpenseItem( updatedExpense, expense.id)
+      toast.success("Expense Item Deleted")
+
     } catch (error) {
       console.log(error.message)
+      toast.error(error.message)
     }
   }
 
   const deleteExpenseCategoryHandler = async () => {
     try {
       await deleteExpenseCategory(expense.id)
+      toast.success("Expense category deleted successfully! ")
     } catch (error) {
       console.log(error.message)
+      toast.error(error.message)
     }
   }
   return (
